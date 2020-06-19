@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ffftest</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./responsive.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="container">
+            <div class="left_col">
+                <img src="./img/wither.png" alt="wicher" class="hero">
+                <div class="logo">
+                    <a href="">
+                        <img src="./img/logo.png" alt="logo">
+                    </a>
+                </div>
+            </div>
+            <div class="right_col">
+                <div class="offer">
+                    <h1>300%</h1>
+                    <h2>Welcome bonus</h2>
+                    <div class="code_block">
+                        <input class="btn_title" id="textCopyInput" type="text" value="witcher"/><button class="btn_code">copy code</button>
+                    </div>
+                    <div>
+                      <button id="btnCopy" data-clipboard-action="cut" data-clipboard-target="#textCopyInput" class="btn btn_play ">play now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./node_modules/clipboard/dist/clipboard.js"></script>
+    <script>
+        var clipboard = new ClipboardJS('.btn');
+
+        clipboard.on('success', function(e) {
+            console.info('Action:', e.action);
+            console.info('Text:', e.text);
+            console.info('Trigger:', e.trigger);
+
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+    </script>
+
+</body>
+</html>
